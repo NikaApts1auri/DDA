@@ -1,19 +1,5 @@
 import React, { useState } from 'react';
 
-// Define interface for navigation items
-interface NavItem {
-  label: string;
-  href: string;
-}
-
-// Navigation items array
-const navItems: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Contact', href: '/contact' },
-];
-
 // Header component
 const Header: React.FC = () => {
   const [language, setLanguage] = useState('EN');
@@ -36,24 +22,24 @@ const Header: React.FC = () => {
         </div>
 
         {/* Navigation */}
-        <nav>
-          <ul className="flex space-x-6">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="hover:text-gray-300 transition duration-300"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <nav className="flex space-x-6">
+          <div className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            Home
+          </div>
+          <div className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            About Us
+          </div>
+          <div className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            Services
+          </div>
+          <div className="hover:text-gray-300 transition duration-300 cursor-pointer">
+            Contact
+          </div>
         </nav>
 
         {/* Language Switcher */}
         <div className="flex space-x-4">
-          {['EN', 'GE', 'DE'].map((lang) => (
+          {['EN', 'DE'].map((lang) => (
             <button
               key={lang}
               onClick={() => handleLanguageChange(lang)}
@@ -63,11 +49,10 @@ const Header: React.FC = () => {
                   : 'bg-gray-500 text-white hover:bg-green-400'
               }`}
             >
-              {lang === 'EN' ? 'English' : lang === 'GE' ? 'ქართული' : 'Deutsch'}
+              {lang === 'EN' ? 'English' : 'Deutsch'}
             </button>
           ))}
         </div>
-
 
         <div>
           <a

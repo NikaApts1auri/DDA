@@ -1,67 +1,75 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Submitted Email:", email);
-    setEmail('');
-  };
-
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-4">
-
-        <div className="mb-4 md:mb-0">
-          <h2 className="text-2xl font-bold">Support Group</h2>
-          <p className="text-gray-200">Together we are stronger.</p>
+    <footer className="bg-gray-100 text-sm">
+      {/* Top Section */}
+      <div className="bg-blue-900 text-white py-8">
+        <div className="max-w-screen-xl mx-auto px-4 text-center">
+          <h2 className="text-2xl font-semibold mb-4">Kontakt</h2>
+          <p className="text-lg mb-4">SO ERREICHEN SIE UNS:</p>
+          <div className=" sm:grid-cols-2 gap-8 mb-6">
+            {/* Contact details */}
+            <div>
+              <p className="font-bold">DCS</p>
+              <p className="mb-2">+49(0)30 - 390 709 0</p>
+              <p className="mb-2">info(at)dcs.de</p>
+              <p className="font-bold mt-4">Untis</p>
+              <p className="mb-2">+49(0)30 - 390 709 10</p>
+              <p>untis(at)dcs.de</p>
+            </div>
+            {/* Map */}
+            <div>
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=13.305%2C52.520%2C13.315%2C52.525&layer=mapnik"
+                width="100%"
+                height="300"
+                className="border-none mt-[20px]"
+                loading="lazy"
+                title="Office Location"
+              ></iframe>
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Navigation Section */}
-        <nav className="flex flex-col md:flex-row mb-4">
-          <a href="#about" className="mx-2 text-gray-200 hover:text-white transition duration-300">About Us</a>
-          <a href="#resources" className="mx-2 text-gray-200 hover:text-white transition duration-300">Resources</a>
-          <a href="#contact" className="mx-2 text-gray-200 hover:text-white transition duration-300">Contact</a>
-          <a href="#faq" className="mx-2 text-gray-200 hover:text-white transition duration-300">FAQ</a>
-        </nav>
+      {/* Bottom Section */}
+      <div className="bg-white py-6">
+        <div className="max-w-screen-xl items-center mx-auto px-4 grid sm:grid-cols-3 gap-8">
+          {/* Address */}
 
-        {/* Email Subscription Section */}
-        <div className="mb-4">
-          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-center">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="p-2 rounded-md border border-gray-200 mr-2"
-              required
-            />
-            <button type="submit" className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-500 transition duration-300">
-              Subscribe
-            </button>
-          </form>
-        </div>
+          <div>
+            {/* <img src="./majorLogo.webp" alt="Logo" className="h-12 mb-4" /> */}
+            <h3 className="font-semibold">Anschrift</h3>
+            <p>Dialog Computer Systeme GmbH</p>
+            <p>Helmholtzstr. 2-9</p>
+            <p>Aufgang C / 1. OG</p>
+            <p>10587 Berlin</p>
+          </div>
 
-        {/* Social Media Section */}
-        <div className="flex space-x-4 mb-4">
-          <a href="#" className="text-gray-200 hover:text-white transition duration-300">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" className="text-gray-200 hover:text-white transition duration-300">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="#" className="text-gray-200 hover:text-white transition duration-300">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href="#" className="text-gray-200 hover:text-white transition duration-300">
-            <i className="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+          {/* Contact */}
+          <div className=' flex flex-col gap-[15px]'>
+            <h3 className="font-semibold">Kontakt</h3>
+            <p>+49 (0)30 - 390 709 0</p>
+            <p>info(at)dcs.de</p>
+          </div>
 
-        <div className="text-sm">
-          <p>&copy; {new Date().getFullYear()} Support Group. All rights reserved.</p>
-          <p className="text-gray-200">Privacy Policy | Terms of Service</p>
+          {/* Links */}
+          <div className='flex flex-col gap-[15px]'>
+            <h3 className="font-semibold">Links</h3>
+            <ul>
+              <li className="mb-2">
+                <a href="/impressum" className="text-gray-600 hover:text-gray-800">
+                  Impressum
+                </a>
+              </li>
+              <li>
+                <a href="/fastclient" className="text-gray-600 hover:text-gray-800">
+                  Fastclient
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
