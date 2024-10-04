@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainSection: React.FC = () => {
+const HomeSection: React.FC = () => {
   return (
     <main className="bg-white py-10">
       {/* Cards Section */}
@@ -73,4 +73,4 @@ const MainSection: React.FC = () => {
   );
 };
 
-export default MainSection;
+export default HomeSection;
