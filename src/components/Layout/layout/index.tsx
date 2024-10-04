@@ -1,17 +1,15 @@
-
-import { Outlet } from 'react-router-dom'
-import Header from '../../base/header/header/Header'
-import Footer from '../../base/footer/footer/Footer'
+import { Outlet } from 'react-router-dom';
+import HeaderComponent from '../../base/header/header/Header'; // Renamed Header
+import Footer from '../../base/footer/footer/Footer';
 
 const DefaultLayout = () => {
   return (
     <>
-    <Header/>
-    <Outlet/>
-    <Footer/>
-      
+      <HeaderComponent /> {/* Updated the component name here */}
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default DefaultLayout
+export default DefaultLayout;

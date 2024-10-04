@@ -1,4 +1,4 @@
-import React from 'react'
+
 import GetSupport from '../support/Support'
 
 const GetSupportView = () => {
