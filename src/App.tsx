@@ -4,6 +4,7 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Layout from './components/Layout/layout';
 import HomeView from './components/Home/view';
 import AboutView from './components/about/view';
+import ServicesView from './components/services/view';
 
 
 const App: React.FC = () => {
@@ -17,7 +18,8 @@ const App: React.FC = () => {
             </Route>
             <Route path='/About' element={<AboutView/>}>
             </Route>
-            
+            <Route path='/Services' element={<ServicesView/>}>
+            </Route>
 
         </Route>
 
