@@ -1,6 +1,11 @@
-import React from 'react';
+
 
 const Services = () => {
+  const Service = () => {
+    return <div>Service Component</div>;
+};
+console.log(Service)
+
   return (
     <div className="max-w-screen-xl mx-auto px-4 grid sm:grid-cols-3 gap-6  my-[10rem] ">
       {/* Card 1 */}
